@@ -12,9 +12,9 @@ OBJ_FILES := $(patsubst $(IDIR)/%.cpp,$(ODIR)/%.o,$(SRC_FILES))
 SRC_FILES2 := $(wildcard $(IDIR2)/*.cpp)
 HTML_FILES := $(patsubst $(IDIR2)/%.cpp,$(ODIR)/%.html,$(SRC_FILES2))
 
-.PHONY: clean directories version all
+.PHONY: clean directories version all clean2
 
-all: clean directories version $(OBJ_FILES) $(HTML_FILES)
+all: clean directories version $(OBJ_FILES) $(HTML_FILES) clean2
 
 ###########################
 # Make clean
@@ -55,3 +55,10 @@ $(ODIR)/%.o: $(IDIR)/%.cpp
 
 $(ODIR)/%.html: $(IDIR2)/%.cpp
 	$(CC) $(CFLAGS) -o $@ $^ $(OBJ_FILES) -s FETCH=1
+
+##########################
+# Remove object files
+##########################
+
+clean2:
+	rm $(ODIR)/*.o
