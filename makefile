@@ -40,7 +40,6 @@ $(ODIR):
 
 version:
 	echo "#define APP_VERSION \"$(VERSION)\"" > $(IDIR)/Version.h
-	echo " * Version $(VERSION)"
 
 ###########################
 # Make library
