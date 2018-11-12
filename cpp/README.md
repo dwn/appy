@@ -1,3 +1,3 @@
-# appy-utl
-|Just makefiles for Appy projects, along with functions used to generate tables and other preprocessed data|
+# cpp
+|Just functions used to generate tables and other preprocessed data|
 |:---|
